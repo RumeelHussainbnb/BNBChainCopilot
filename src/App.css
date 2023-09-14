@@ -1,0 +1,317 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  background: rgb(13, 13, 14);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.App{
+  min-height: 100vh;
+  display: flex;
+}
+
+.sidebar{
+  flex: 3;  
+  border-right: 1px solid rgb(100,100,100);
+}
+
+.main{
+  flex: 9;
+}
+
+.logo{
+  margin-right: 1rem;
+}
+
+.brand{
+  font-size: 2rem;
+}
+
+.upperSide{
+  padding: 2.5rem;
+  border-bottom: 1px solid rgb(100,100,100);
+  height: 70%;
+  
+}
+
+.upperSideTop{
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  
+}
+.upperSideBottom{
+  height: 70%;
+  overflow-y: auto; 
+}
+.addBtn{
+  height: 2rem;
+  padding-right: 1rem;
+}
+
+.midBtn{
+  background: #ffd901;
+  border: none;
+  color:black;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  width: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  border-radius: 0.5rem;
+}
+
+.query{
+  display: flex;
+  align-items: center;
+  background: transparent;
+  color:rgba(222,222,222,1);
+  padding: 1.5rem;
+  width: 25rem;
+  margin: 1rem auto;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(98,98,1);
+}
+
+.query>img{
+  margin-right: 2rem;
+  object-fit: cover;
+  height: 1.75rem;
+}
+
+.lowerSide{
+  padding: 2rem;
+}
+
+.listItems{
+  margin: 0.75rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+.listItems>img{
+  margin:1rem;
+  padding-right: 1rem;
+}
+
+.listItems:nth-child(1)>.img{
+  margin-right: 0.5rem;
+}
+
+.main{
+  min-height: calc(100vh - 14rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 6rem 10rem;
+  margin-bottom: 0rem;
+}
+
+.chats{
+  overflow: hidden;
+  overflow-y:scroll;
+  scroll-behavior: smooth;
+  width: 100%;
+  max-width: 70rem;
+  height: calc(100vh - 17rem);
+  scrollbar-width: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.chat{
+  margin: 1rem;
+  padding: 2rem 3rem;
+  font-size: 1.2 rem;
+  display: flex;
+  align-items: flex-start;
+  text-align: justify;
+}
+
+.chatimg{
+  object-fit: cover;
+  width: 3.5rem;
+  margin-right: 2rem;
+  border-radius: 0.5rem;
+}
+
+.bot{
+  background:rgba(53, 53, 53, 1);
+  width: 100%;
+}
+
+.chatFooter{
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inp{
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  background: rgb(53, 53, 53);
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  width: 70rem;
+}
+
+.inp>input{
+  width: calc(100% - 3rem);
+  outline: none;
+  padding: 1.25rem;
+  color: rgb(255, 255, 255);
+}
+
+.inp>input, .send{
+  background: transparent;
+  border: none;
+}
+
+.chatFooter>p{
+  margin: 2rem 0rem
+}
+
+.txt{
+  line-height: 2rem;
+  font-size: 1.2rem;
+  color: rgba(222,222,222,1);
+}
+
+/* CSS for the modal container */
+.modal {
+  /* Hide the modal by default */
+  position: fixed; /* Fixed positioning for overlay */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 1000; /* Place modal on top of other elements */
+  overflow: auto; /* Enable scrolling when content exceeds viewport */
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+.room-container {
+  display: flex; /* Display children side by side */
+  align-items: center; /* Vertically center the items */
+  justify-content: space-between; /* Add space between items */
+  margin-bottom: 10px; /* Adjust the margin as needed */
+}
+
+/* CSS for the modal content */
+.modal-content {
+  background-color: #616161; /* White background for modal content */
+  margin: 0 auto; /* Center horizontally */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Adjust the width of the modal content */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+  text-align: center; /* Center text in the modal content */
+  position: relative; /* Relative positioning for close button */
+}
+
+/* Close button (optional) */
+.close {
+  color: #888;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+.inpModal{
+  background: rgb(53, 53, 53);
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  margin: 5%;
+}
+.room-list {
+  display: flex;
+  flex-direction: column; /* Align items vertically */
+}
+
+.room-item {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  margin-bottom: 10px; /* Adjust margin as needed */
+  position: relative; /* Make the container relative for absolute positioning */
+}
+
+.query-button {
+  /* Your styles for the query button */
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.delete-button {
+  /* Your styles for the delete button */
+  right: 0;
+  background-color: red;
+  color: #fff;
+  padding: 5px;
+  border: none;
+  border-radius: 50%; /* Make it a circle */
+  cursor: pointer;
+}
+
+.toast {
+  background-color: #ca2828;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.toast-content {
+  font-size: 16px;
+}
+.toast-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure it's above other content */
+}
+.send:disabled {
+  /* //background-color: rgb(247, 247, 247); */
+  --tw-text-opacity:1;
+  color: rgba(172,172,190,var(--tw-text-opacity));
+  cursor: not-allowed;
+}
+
+
+
