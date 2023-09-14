@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+#  BNB Chain Copilot
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The BNB Chain Copilot is aimed at making the development on BNB Chain eaiser for new users. We aim to incorporate ChatGPT-4 to answer queries related to BNB Chain (theoratical concepts or development). With Web3 wallet integration (walletconnect), it would be easier to keep track of the number of users we have onboarded. 
 
-## Available Scripts
+> **Note:**
+> Currently we have only implemented integration with Chatpgt 3.5 Turbo model, however, in future we aim to finetune it to provide better information about the BNB Chain.
 
-In the project directory, you can run:
+## Pre-requisites
+To successfully run this project on your local machine, make sure you fulfill the following requirements. 
 
-### `npm start`
+#### Software Requirements
+* NPM v9.5.1 or above
+* [Nodejs](https://nodejs.org/en/download/current) v18.14.2 or above
+* [MongoDB Compass](https://www.mongodb.com/try/download/compass) v1.39.3 or above
+* [MongoDB Atlas](https://www.mongodb.com/atlas) for creating database and getting connection string
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Setup
+* Clone this repo using the command `git clone https://github.com/RumeelHussainbnb/BNBCopilot.git`
+* Rename the file `.env.example` to `.env`
+* Update the `OPENAI_API_KEY` in the `.env` file with your OPENAI keys. You can get OPENAI keys from [here](https://platform.openai.com/account/api-keys). Create new if you dont have exisiting.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## MongoDB Setup
+* Navigate to [MongoDB Atlas](https://www.mongodb.com/atlas), create a new project and a database named `ChatGPTDB`. If required add two collections `Chats` and `Rooms`.
+* Copy the connection string of the database.
+* In the [db.js](./backend/db.js) update the connection string with the connection string for your mongodb database.
 
-### `npm test`
+## Running the Project Locally
+To run the project locally, run the following commands
+* `npm install` to install all of the dependencies.
+* `npm run dev` to run the app in the development mode.
+* Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
