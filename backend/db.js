@@ -1,8 +1,7 @@
 //const MONGO_STRING = require('../src/config.env');
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
-const uri = "mongodb+srv://admin:Mi8s5k9v1KO7TtPG@cluster0.n3ocyhg.mongodb.net/?retryWrites=true&w=majority";
-
+const uri = "ADD MONGODB CONNECTION STRING";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true,
   serverSelectionTimeoutMS: 10000, // Timeout for server selection
   socketTimeoutMS: 45000, // Timeout for individual queries
